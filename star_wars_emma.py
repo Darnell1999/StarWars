@@ -4,7 +4,6 @@ import pymongo
 client = pymongo.MongoClient()
 db = client['starwars']
 
-
 def pilot(url):
     """This function takes the starship API as the input and returns the APIs of the pilots as a list"""
     sw_req = requests.get(url)
@@ -42,5 +41,10 @@ def create_starship(starship_api):
 
 
 print(create_starship("https://swapi.dev/api/starships/10"))
+print(create_starship("https://swapi.dev/api/starships/3"))
+print(create_starship("https://swapi.dev/api/starships/9"))
+print(create_starship("https://swapi.dev/api/starships/12"))
+
+
 
 db.starships.drop()
